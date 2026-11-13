@@ -1,0 +1,21 @@
+name: Core and host tests
+
+on:
+  push:
+    branches: [main, 'next-step/**']
+  pull_request:
+    branches: [main]
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm run test:all
+      - name: Check browser entry-point syntax
+        run: |
+          node --check src/application/application-shell.js
+          node --check src/adapters/presentation/dev-world-preview.js
