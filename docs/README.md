@@ -1,35 +1,35 @@
-# Project Documentation
+# Archived Project Documentation
 
-Canonical project documentation and phase records.
+This documentation describes the preserved Core + Phase 2 snapshot from `NEW-GAME-CASS/main` at commit [`31c1cd4`](https://github.com/Veyn44/NEW-GAME-CASS/commit/31c1cd4bb5f4e9e85bfbb98b863903f57c1f518f).
 
-## Completed phase awaiting merge review
+This repository is a reference archive, not the active development target. Current gameplay planning and future implementation belong in [`Veyn44/NEW-GAME-CASS`](https://github.com/Veyn44/NEW-GAME-CASS).
 
-- [Phase 2 plan](phases/PHASE_2.md) — implementation and acceptance complete; final branch review and explicit merge approval remain.
-- [Phase 2.4 Persistence and Dev Lab Workspace Plan](phases/PHASE_2_4_PERSISTENCE_PLAN.md) — final accepted persistence contract, browser verification and deferred items.
-- [Phase 2 test plan](testing/PHASE_2_TEST_PLAN.md) — automated/manual test layers and final acceptance evidence.
+## Completed phase
 
-## Next phase discovery
-
-No canonical Phase 3 plan exists yet. The strongest already-approved architectural input for the next planning discussion is [World Lifecycle](architecture/WORLD_LIFECYCLE.md), which defines one persistent world and at most one active temporary world, but explicitly leaves implementation pending. This is a candidate direction, not an approved Phase 3 scope.
+- [Phase 2 — First Testable Game Layer](phases/PHASE_2.md) — completed, user-accepted and merged into the source repository's `main`.
+- [Phase 2.4 — Persistence and Dev Lab Workspace](phases/PHASE_2_4_PERSISTENCE_PLAN.md) — final persistence contract, implementation notes and user acceptance.
+- [Phase 2 test plan](testing/PHASE_2_TEST_PLAN.md) — automated and manual evidence, including explicit deferred checks.
 
 ## Architecture
 
-- [Application Shell and Mode Architecture](architecture/APPLICATION_SHELL_AND_MODES.md) — main menu, Dev Lab/New Game separation, reusable gameplay ownership and canonical Database registry.
-- [Core Audit — Phase 2](architecture/CORE_AUDIT_PHASE_2.md) — source-level review of Core ownership, API constraints, test evidence and the proposed World/Pawn integration.
-- [World Lifecycle](architecture/WORLD_LIFECYCLE.md) — approved persistent/temporary world model, simulation gating and transition constraints.
-- [Game Systems Architecture](architecture/GAME_SYSTEMS_ARCHITECTURE.md) — ownership, dependencies and communication.
-- [Phase 2 System Contracts](architecture/PHASE_2_SYSTEM_CONTRACTS.md) — actual Core integration contracts for host, world, Pawn and locomotion.
-- [Repository Structure](architecture/REPOSITORY_STRUCTURE.md) — directory layout and phase-to-main merge map.
-- [World Geometry](architecture/WORLD_GEOMETRY.md) — approved square world dimensions, coordinate rules and initial camera/viewport test settings.
+- [Application Shell and Mode Architecture](architecture/APPLICATION_SHELL_AND_MODES.md) — application shell, Dev Lab/New Game separation and shared gameplay ownership.
+- [Core Audit — Phase 2](architecture/CORE_AUDIT_PHASE_2.md) — source/API audit and the conclusions carried into the accepted Phase 2 implementation.
+- [Phase 2 System Contracts](architecture/PHASE_2_SYSTEM_CONTRACTS.md) — host, Unit, Colony Control, locomotion and persistence contracts.
+- [World Lifecycle](architecture/WORLD_LIFECYCLE.md) — approved persistent/temporary world model and its still-open implementation details.
+- [Game Systems Architecture](architecture/GAME_SYSTEMS_ARCHITECTURE.md) — system ownership, dependencies and communication.
+- [Repository Structure](architecture/REPOSITORY_STRUCTURE.md) — preserved directory layout and project boundaries.
+- [World Geometry](architecture/WORLD_GEOMETRY.md) — world dimensions and coordinate conventions.
 
 ## Standards
 
-- [System Development Standard](standards/SYSTEM_DEVELOPMENT_STANDARD.md) — required design, lifecycle, persistence and test checklist for gameplay systems.
+- [System Development Standard](standards/SYSTEM_DEVELOPMENT_STANDARD.md) — system design, ownership, lifecycle, persistence and testing requirements.
 
-## Documentation rules
+## Archive rules
 
-- Keep one canonical copy of each document.
-- Plans describe intended work; implementation reports describe what actually exists.
-- Never mark tests as passing unless they have run.
-- When implementation changes a contract, update the relevant architecture/specification document in the same phase branch.
-- Keep phase decisions and deferred questions traceable; do not silently rewrite history.
+- Treat this repository as an immutable reference baseline.
+- Do not continue Phase 2 development here; it has already been merged into the active repository.
+- Do not interpret historical branch names or pre-merge checklists as current instructions. The final Phase 2 acceptance and merge records supersede them.
+- Do not infer that a test passed merely because a test file or script exists. Use the recorded evidence and distinguish automated CI from user-confirmed browser checks.
+- Do not modify Core casually. Any proposed Core change requires a concrete domain-neutral reason and a separate review.
+
+A separate Phase 3 plan is intentionally not included in this archival snapshot. Refine future scope in the active repository when work resumes.
